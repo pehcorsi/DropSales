@@ -1,19 +1,10 @@
-/* ============================================================
-   DropSales — Banner Digital
-   Tema claro estilo SaaS. Paleta extraída direto da logo.
-   ============================================================ */
-
-/* ============================================================
-   TOKENS — variáveis de design
-   ============================================================ */
 :root {
-  /* Marca DropSales (medido da logo oficial) */
+
   --brand:           #2066FC;
   --brand-dark:      #1851D4;
   --brand-light:     #E8F0FF;
-  --brand-ink:       #222933;   /* "Drop" da logo */
+  --brand-ink:       #222933;   
 
-  /* Neutros (escala fria, casa com o azul) */
   --bg:              #FFFFFF;
   --bg-soft:         #F6F8FB;
   --bg-muted:        #EEF1F6;
@@ -21,12 +12,10 @@
   --border:          #E4E8EF;
   --border-strong:   #D5DBE5;
 
-  /* Texto */
   --text:            #0F172A;
   --text-muted:      #4B5566;
   --text-dim:        #6B7689;
 
-  /* Tipografia */
   --font-display: "Sora", system-ui, -apple-system, sans-serif;
   --font-body:    "Manrope", system-ui, -apple-system, sans-serif;
 
@@ -37,13 +26,11 @@
   --fs-sm: .875rem;
   --fs-xs: .75rem;
 
-  /* Espaçamento */
   --space-1: .25rem; --space-2: .5rem; --space-3: .75rem;
   --space-4: 1rem;   --space-5: 1.5rem; --space-6: 2rem;
   --space-7: 3rem;   --space-8: 4rem;   --space-9: 6rem;
   --space-10: 8rem;
 
-  /* Layout */
   --container: 1180px;
   --radius:    16px;
   --radius-sm: 10px;
@@ -55,9 +42,6 @@
   --header-h: 72px;
 }
 
-/* ============================================================
-   RESET
-   ============================================================ */
 *, *::before, *::after { box-sizing: border-box; }
 html {
   scroll-behavior: smooth;
@@ -87,16 +71,12 @@ h1, h2, h3, h4 {
 }
 p { margin: 0 0 var(--space-4); color: var(--text-muted); }
 
-/* Focus visível (acessibilidade) */
 :focus-visible {
   outline: 2px solid var(--brand);
   outline-offset: 3px;
   border-radius: 4px;
 }
 
-/* ============================================================
-   LAYOUT
-   ============================================================ */
 .container {
   width: 100%;
   max-width: var(--container);
@@ -116,7 +96,6 @@ p { margin: 0 0 var(--space-4); color: var(--text-muted); }
 .prose strong { color: var(--text); font-weight: 700; }
 .prose em { font-style: italic; color: var(--brand-dark); }
 
-/* Eyebrow (kicker label antes de cada H2) */
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -141,9 +120,6 @@ p { margin: 0 0 var(--space-4); color: var(--text-muted); }
   50% { box-shadow: 0 0 0 8px rgba(32,102,252,0); }
 }
 
-/* ============================================================
-   HEADER
-   ============================================================ */
 .site-header {
   position: fixed; inset: 0 0 auto 0;
   height: var(--header-h);
@@ -196,7 +172,6 @@ p { margin: 0 0 var(--space-4); color: var(--text-muted); }
 }
 .nav__cta:hover { background: var(--brand); transform: translateY(-1px); }
 
-/* Hamburger */
 .nav__toggle {
   display: none;
   width: 40px; height: 40px;
@@ -215,15 +190,12 @@ p { margin: 0 0 var(--space-4); color: var(--text-muted); }
 .nav__toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .nav__toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ============================================================
-   HERO
-   ============================================================ */
 .hero {
   position: relative;
   padding: calc(var(--header-h) + var(--space-9)) 0 var(--space-9);
   overflow: hidden;
 }
-/* Decoração de fundo: blob radial sutil + grid pattern */
+
 .hero::before {
   content: "";
   position: absolute;
@@ -269,7 +241,6 @@ p { margin: 0 0 var(--space-4); color: var(--text-muted); }
 }
 .hero__cta { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-6); }
 
-/* Preview window (mockup do browser) */
 .hero__preview {
   margin: 0;
   position: relative;
@@ -312,7 +283,6 @@ p { margin: 0 0 var(--space-4); color: var(--text-muted); }
 }
 .hero__preview-window-body small { color: var(--text-dim); font-size: var(--fs-sm); }
 
-/* Stats grid */
 .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -335,11 +305,6 @@ p { margin: 0 0 var(--space-4); color: var(--text-muted); }
 }
 .stat__label { color: var(--text-muted); font-size: var(--fs-sm); }
 
-/* ============================================================
-   COMPONENTES
-   ============================================================ */
-
-/* Botões */
 .btn {
   display: inline-flex; align-items: center; gap: var(--space-2);
   padding: .85rem 1.4rem;
@@ -366,7 +331,6 @@ p { margin: 0 0 var(--space-4); color: var(--text-muted); }
 }
 .btn--ghost:hover { border-color: var(--brand); color: var(--brand); }
 
-/* Callout */
 .callout {
   display: flex; gap: var(--space-4);
   background: linear-gradient(135deg, var(--brand-light), #fff);
@@ -390,7 +354,6 @@ p { margin: 0 0 var(--space-4); color: var(--text-muted); }
 .callout h3 { font-size: var(--fs-3); margin-bottom: var(--space-1); }
 .callout p { margin: 0; }
 
-/* Features */
 .features {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -419,7 +382,6 @@ p { margin: 0 0 var(--space-4); color: var(--text-muted); }
 .feature-card h3 { font-size: var(--fs-3); }
 .feature-card p { margin: 0; }
 
-/* Pills */
 .pills { display: flex; flex-wrap: wrap; gap: var(--space-3); }
 .pills li {
   padding: .55rem 1.1rem;
@@ -437,7 +399,6 @@ p { margin: 0 0 var(--space-4); color: var(--text-muted); }
   border-color: var(--brand);
 }
 
-/* Fluxograma */
 .flow {
   display: flex; flex-wrap: wrap; align-items: stretch;
   gap: var(--space-4);
@@ -469,7 +430,6 @@ p { margin: 0 0 var(--space-4); color: var(--text-muted); }
   font-weight: 300;
 }
 
-/* Demo / Facade YouTube */
 .yt-facade {
   position: relative;
   aspect-ratio: 16 / 9;
@@ -499,7 +459,6 @@ p { margin: 0 0 var(--space-4); color: var(--text-muted); }
 
 .demo-actions { margin-top: var(--space-5); display: flex; justify-content: flex-end; }
 
-/* ODS */
 .ods-card {
   display: flex; gap: var(--space-6); align-items: center;
   background: var(--surface);
@@ -532,7 +491,6 @@ p { margin: 0 0 var(--space-4); color: var(--text-muted); }
 .ods-card h3 { font-size: var(--fs-3); }
 .ods-card p { margin: 0; }
 
-/* Equipe */
 .team {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -562,7 +520,7 @@ p { margin: 0 0 var(--space-4); color: var(--text-muted); }
   color: #fff;
   box-shadow: 0 8px 20px -6px rgba(32,102,252,.4);
 }
-/* Variante: avatar com foto real (sobrescreve o gradiente e centraliza a imagem) */
+
 .team-card__avatar--photo {
   display: block;
   object-fit: cover;
@@ -588,7 +546,6 @@ p { margin: 0 0 var(--space-4); color: var(--text-muted); }
   margin: 0;
 }
 
-/* QR section */
 .qr {
   display: grid; grid-template-columns: 1.2fr 1fr;
   gap: var(--space-7); align-items: center;
@@ -614,7 +571,6 @@ p { margin: 0 0 var(--space-4); color: var(--text-muted); }
   font-weight: 600;
 }
 
-/* Footer */
 .site-footer {
   border-top: 1px solid var(--border);
   background: var(--bg);
@@ -635,9 +591,6 @@ p { margin: 0 0 var(--space-4); color: var(--text-muted); }
   color: var(--text-dim);
 }
 
-/* ============================================================
-   RESPONSIVO
-   ============================================================ */
 @media (max-width: 960px) {
   .hero__grid { grid-template-columns: 1fr; }
   .features { grid-template-columns: 1fr 1fr; }
@@ -679,9 +632,6 @@ p { margin: 0 0 var(--space-4); color: var(--text-muted); }
   .callout { flex-direction: column; }
 }
 
-/* ============================================================
-   ANIMAÇÕES DE ENTRADA (hero)
-   ============================================================ */
 @media (prefers-reduced-motion: no-preference) {
   .hero__content > * {
     opacity: 0;

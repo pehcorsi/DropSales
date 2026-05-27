@@ -1,17 +1,6 @@
-// ============================================================
-// DropSales — main.js
-//   1) Menu mobile (hamburger)
-//   2) Navbar com sombra ao scrollar
-//   3) Link ativo conforme seção visível (IntersectionObserver)
-//   4) YouTube facade — só carrega o iframe pesado quando clicado
-// ============================================================
-
 (function () {
   'use strict';
 
-  // ---------------------------------------------------------
-  // 1) MENU MOBILE
-  // ---------------------------------------------------------
   const toggle  = document.getElementById('navToggle');
   const navList = document.getElementById('navList');
 
@@ -32,9 +21,6 @@
     });
   }
 
-  // ---------------------------------------------------------
-  // 2) NAVBAR COM SOMBRA AO SCROLLAR
-  // ---------------------------------------------------------
   const header = document.getElementById('siteHeader');
   const onScroll = () => {
     if (!header) return;
@@ -43,9 +29,6 @@
   document.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // ---------------------------------------------------------
-  // 3) LINK ATIVO CONFORME SEÇÃO VISÍVEL
-  // ---------------------------------------------------------
   const sections = document.querySelectorAll('main section[id]');
   const links    = document.querySelectorAll('.nav__list a[href^="#"]');
 
@@ -68,11 +51,6 @@
     sections.forEach((s) => observer.observe(s));
   }
 
-  // ---------------------------------------------------------
-  // 4) YOUTUBE FACADE
-  //    Substitui a thumbnail por um <iframe> só quando clicado.
-  //    Economiza ~500kB e melhora muito o LCP.
-  // ---------------------------------------------------------
   document.querySelectorAll('.yt-facade').forEach((facade) => {
     const load = () => {
       const id = facade.getAttribute('data-video-id');
