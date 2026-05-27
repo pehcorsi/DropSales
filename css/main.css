@@ -113,6 +113,8 @@ p { margin: 0 0 var(--space-4); color: var(--text-muted); }
   color: var(--text-muted);
 }
 .prose p { max-width: 65ch; font-size: 1.0625rem; }
+.prose strong { color: var(--text); font-weight: 700; }
+.prose em { font-style: italic; color: var(--brand-dark); }
 
 /* Eyebrow (kicker label antes de cada H2) */
 .eyebrow {
@@ -559,6 +561,13 @@ p { margin: 0 0 var(--space-4); color: var(--text-muted); }
   font-weight: 700; font-size: 1.25rem;
   color: #fff;
   box-shadow: 0 8px 20px -6px rgba(32,102,252,.4);
+}
+/* Variante: avatar com foto real (sobrescreve o gradiente e centraliza a imagem) */
+.team-card__avatar--photo {
+  display: block;
+  object-fit: cover;
+  background: var(--bg-muted);
+  border: 3px solid #fff;
 }
 .team-card h3 { font-size: 1.0625rem; margin-bottom: var(--space-1); }
 .team-card__id {
