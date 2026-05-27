@@ -84,18 +84,65 @@
           </div>
         </div>
 
-        <figure class="hero__preview" aria-label="Preview da solução DropSales">
+        <figure class="hero__preview" aria-label="Capturas de tela do DropSales">
+          <div class="carousel"
+               id="heroCarousel"
+               role="region"
+               aria-roledescription="carrossel"
+               aria-label="Telas do DropSales">
 
-          <div class="hero__preview-placeholder">
-            <div class="hero__preview-window">
-              <div class="hero__preview-window-bar">
-                <span></span><span></span><span></span>
-              </div>
-              <div class="hero__preview-window-body">
-                <span>Preview da Solução</span>
-                <small>Substitua por imagem, GIF ou screenshot do sistema.</small>
-              </div>
+            <div class="carousel__viewport">
+              <ul class="carousel__track" id="carouselTrack">
+                <li class="carousel__slide" data-label="Tela inicial">
+                  <img src="assets/images/screens/inicio.jpg"
+                       alt="Tela inicial do DropSales com botões Entrar e Cadastrar"
+                       loading="eager" decoding="async" />
+                </li>
+                <li class="carousel__slide" data-label="Cadastro">
+                  <img src="assets/images/screens/registro.jpg"
+                       alt="Tela de cadastro de novo usuário no DropSales"
+                       loading="lazy" decoding="async" />
+                </li>
+                <li class="carousel__slide" data-label="Login">
+                  <img src="assets/images/screens/login.jpg"
+                       alt="Tela de login do DropSales"
+                       loading="lazy" decoding="async" />
+                </li>
+                <li class="carousel__slide" data-label="Redefinir senha">
+                  <img src="assets/images/screens/senha.jpg"
+                       alt="Tela de redefinição de senha do DropSales"
+                       loading="lazy" decoding="async" />
+                </li>
+                <li class="carousel__slide" data-label="Dashboard">
+                  <img src="assets/images/screens/dashboard.jpg"
+                       alt="Dashboard do DropSales com receita, despesas, lucro e gráficos"
+                       loading="lazy" decoding="async" />
+                </li>
+              </ul>
             </div>
+
+            <button class="carousel__btn carousel__btn--prev"
+                    type="button" aria-label="Tela anterior">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2.5"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button class="carousel__btn carousel__btn--next"
+                    type="button" aria-label="Próxima tela">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2.5"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+
+            <ol class="carousel__dots" id="carouselDots" role="tablist"
+                aria-label="Selecionar tela"></ol>
+
+            <span class="carousel__caption" id="carouselCaption"
+                  aria-live="polite">Tela inicial</span>
           </div>
         </figure>
       </div>

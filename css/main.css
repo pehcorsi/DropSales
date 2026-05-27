@@ -283,6 +283,116 @@ p { margin: 0 0 var(--space-4); color: var(--text-muted); }
 }
 .hero__preview-window-body small { color: var(--text-dim); font-size: var(--fs-sm); }
 
+.carousel {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+.carousel__viewport {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--bg-muted);
+}
+.carousel__track {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  margin: 0; padding: 0;
+  list-style: none;
+  transition: transform .55s cubic-bezier(.65,.05,.36,1);
+  will-change: transform;
+}
+.carousel__slide {
+  flex: 0 0 100%;
+  height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg-soft);
+}
+.carousel__slide img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--text);
+  display: grid; place-items: center;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
+  cursor: pointer;
+  border: 0;
+  transition: background .15s, transform .15s, opacity .15s;
+  z-index: 2;
+  opacity: 0;
+}
+.carousel:hover .carousel__btn,
+.carousel:focus-within .carousel__btn { opacity: 1; }
+.carousel__btn:hover { background: #fff; transform: translateY(-50%) scale(1.08); }
+.carousel__btn--prev { left: 12px; }
+.carousel__btn--next { right: 12px; }
+@media (hover: none) {
+
+  .carousel__btn { opacity: 1; }
+}
+
+.carousel__dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex; gap: 8px;
+  margin: 0; padding: 6px 12px;
+  list-style: none;
+  background: rgba(15, 23, 42, 0.45);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 2;
+}
+.carousel__dots button {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: background .2s, width .25s, transform .2s;
+}
+.carousel__dots button:hover { background: rgba(255, 255, 255, 0.8); }
+.carousel__dots button[aria-current="true"] {
+  background: #fff;
+  width: 22px;
+  border-radius: 999px;
+}
+
+.carousel__caption {
+  position: absolute;
+  top: 12px; left: 12px;
+  padding: 4px 10px;
+  background: rgba(15, 23, 42, 0.55);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: .04em;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 2;
+}
+@media (prefers-reduced-motion: reduce) {
+  .carousel__track { transition: none; }
+}
+
 .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
