@@ -158,6 +158,19 @@
             <span class="carousel__caption" id="carouselCaption"
                   aria-live="polite">Tela inicial</span>
           </div>
+
+          <button class="carousel__expand" id="carouselExpand"
+                  type="button" aria-label="Ampliar imagem em tela cheia">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <polyline points="9 21 3 21 3 15"></polyline>
+              <line x1="21" y1="3" x2="14" y2="10"></line>
+              <line x1="3" y1="21" x2="10" y2="14"></line>
+            </svg>
+            Ampliar
+          </button>
         </figure>
       </div>
 
@@ -548,6 +561,43 @@
       </div>
     </div>
   </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog"
+       aria-modal="true" aria-label="Visualização ampliada" hidden>
+    <button class="lightbox__close" id="lightboxClose"
+            type="button" aria-label="Fechar (Esc)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev"
+            type="button" aria-label="Imagem anterior">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.5"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext"
+            type="button" aria-label="Próxima imagem">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.5"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+
+    <figure class="lightbox__figure">
+      <img class="lightbox__image" id="lightboxImage" src="" alt="" />
+      <figcaption class="lightbox__caption" id="lightboxCaption"></figcaption>
+    </figure>
+
+    <span class="lightbox__counter" id="lightboxCounter" aria-hidden="true">1 / 7</span>
+  </div>
 
   <script src="js/main.js" defer></script>
 </body>
