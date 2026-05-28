@@ -293,7 +293,7 @@ p { margin: 0 0 var(--space-4); color: var(--text-muted); }
 }
 .carousel__viewport {
   position: relative;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   background: var(--bg-muted);
 }
